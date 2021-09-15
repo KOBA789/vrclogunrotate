@@ -1,0 +1,19 @@
+[package]
+name = "vrclogunrotate"
+version = "0.1.0"
+authors = ["koba789 <kobahide789@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+winapi = { version = "0.3", features = ["shlobj", "knownfolders", "combaseapi", "shellapi", "winuser"] }
+anyhow = "1"
+regex = "1"
+lazy_static = "1"
+chrono = "0.4"
+nwg = {version = "1", package = "native-windows-gui"}
+nwd = {version = "1", package = "native-windows-derive"}
+
+[build-dependencies]
+embed-resource = "1.6"
