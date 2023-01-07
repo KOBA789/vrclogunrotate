@@ -215,7 +215,9 @@ impl LocalLowVRChat {
 
     fn list_logfile_paths(&self) -> Result<Vec<PathBuf>> {
         lazy_static! {
-            static ref RE: Regex = Regex::new("^output_log_\\d{2}-\\d{2}-\\d{2}\\.txt$").unwrap();
+            static ref RE: Regex =
+                Regex::new("^output_log_(\\d{2}-\\d{2}-\\d{2}|\\d{4}-\\d{2}-\\d{2}_\\d{2}-\\d{2}-\\d{2})\\.txt$")
+                    .unwrap();
         }
         self.vrchat_path
             .read_dir()?
